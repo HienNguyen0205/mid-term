@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="asset/style.css">
+    <title>To Do Application</title>
+</head>
+
+<body>
+    <div id="main-container">
+        <header id="header" class="p-3">
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <a class="me-auto" href="#">
+                        <img id="logo" src="asset/img/logo.jpg" alt="logo">
+                    </a>
+                    <form>
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Search...">
+                            <span class="input-group-text p-0 me-2">
+                                <button class="btn" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                    <div class="text-end">
+                        <button class="btn btn-primary" type="button">Sign In</button>
+                        <button class="btn btn-secondary" type="button">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="content" class="container">
+            <div id="main-content" class="row h-100 px-3">
+                <div id="side-menu" class="col-lg-2 d-flex flex-column">
+                    <h1 id="brand-name" class="d-flex">Home</h1>
+                    <hr>
+                    <ul class="nav nav-pills flex-column h-100">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="icon fas fa-home"></i>
+                                Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="far fa-star"></i>
+                                Important</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="far fa-paper-plane"></i>
+                                Plan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="icon fas fa-calendar-alt"></i>
+                                Calendar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="icon fas fa-user"></i>
+                                Profile</a>
+                        </li>
+                        <hr class="mt-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="icon fas fa-cog"></i>
+                                Setting</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="display-content" class="col-lg-10 my-3">
+                    <div class="container-fluid d-flex my-3">
+                        <div class="me-auto">
+                            <h5 id="date"></h5>
+                            <h6 id="time"></h6>
+                        </div>
+                        <button id="add-btn" type="button" class="btn btn-success">
+                            <i class="fas fa-plus"></i>
+                            <p class="">Add new task</p>
+                        </button>
+                        <div class="dropdown">
+                            <button id="dropdownMenu" class="btn btn-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-sort"></i>
+                                Sort
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                <li><button class="dropdown-item" type="button">Action</button></li>
+                                <li><button class="dropdown-item" type="button">Another action</button></li>
+                                <li><button class="dropdown-item" type="button">Something else here</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="table-container" class="container-fluid">
+                        <table id="table" class="table table-hover">
+                            <thead id="table-header">
+                                <tr>
+                                    <th></th>
+                                    <th>Content</th>
+                                    <th>Day & Time</th>
+                                    <th colspan="3"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="done">
+                                        </div>
+                                    </td>
+                                    <td>Celebrate a party</td>
+                                    <td>12:00 24/5/2022</td>
+                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td><i id="important" class="far fa-star"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="done">
+                                        </div>
+                                    </td>
+                                    <td>Celebrate a party</td>
+                                    <td>12:00 24/5/2022</td>
+                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td><i id="important" class="far fa-star"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="done">
+                                        </div>
+                                    </td>
+                                    <td>Celebrate a party</td>
+                                    <td>12:00 24/5/2022</td>
+                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td><i id="important" class="far fa-star"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="done">
+                                        </div>
+                                    </td>
+                                    <td>Celebrate a party</td>
+                                    <td>12:00 24/5/2022</td>
+                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td><i id="important" class="far fa-star"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="done">
+                                        </div>
+                                    </td>
+                                    <td>Celebrate a party</td>
+                                    <td>12:00 24/5/2022</td>
+                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td><i id="important" class="far fa-star"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="done">
+                                        </div>
+                                    </td>
+                                    <td>Celebrate a party</td>
+                                    <td>12:00 24/5/2022</td>
+                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td><i id="important" class="far fa-star"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="done">
+                                        </div>
+                                    </td>
+                                    <td>Celebrate a party</td>
+                                    <td>12:00 24/5/2022</td>
+                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td><i id="important" class="far fa-star"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="done">
+                                        </div>
+                                    </td>
+                                    <td>Celebrate a party</td>
+                                    <td>12:00 24/5/2022</td>
+                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td><i id="important" class="far fa-star"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="done">
+                                        </div>
+                                    </td>
+                                    <td>Celebrate a party</td>
+                                    <td>12:00 24/5/2022</td>
+                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td><i id="important" class="far fa-star"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="done">
+                                        </div>
+                                    </td>
+                                    <td>Celebrate a party</td>
+                                    <td>12:00 24/5/2022</td>
+                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td><i id="important" class="far fa-star"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="asset/script.js"></script>
+</body>
+
+</html>
