@@ -14,7 +14,7 @@
     <title>To Do Application</title>
 </head>
 
-<body>
+<body class="preload">
     <div id="main-container">
         <header id="header" class="p-3">
             <div class="container">
@@ -46,33 +46,33 @@
                     <hr>
                     <ul class="nav nav-pills flex-column h-100">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">
+                            <a class="nav-link sidebar-menu active" href="#">
                                 <i class="icon fas fa-home"></i>
                                 Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link sidebar-menu" href="#">
                                 <i class="far fa-star"></i>
                                 Important</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link sidebar-menu" href="#">
                                 <i class="far fa-paper-plane"></i>
                                 Plan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link sidebar-menu" href="#">
                                 <i class="icon fas fa-calendar-alt"></i>
                                 Calendar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="icon fas fa-user"></i>
-                                Profile</a>
+                            <a class="nav-link sidebar-menu" href="#">
+                                <i class="fas fa-chart-bar"></i>
+                                Dashboard</a>
                         </li>
                         <hr class="mt-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link sidebar-menu" href="#">
                                 <i class="icon fas fa-cog"></i>
                                 Setting</a>
                         </li>
@@ -84,20 +84,26 @@
                             <h5 id="date"></h5>
                             <h6 id="time"></h6>
                         </div>
-                        <button id="add-btn" type="button" class="btn btn-success">
+                        <button id="add-btn" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fas fa-plus"></i>
-                            <p class="">Add new task</p>
+                            <p>Add new task</p>
                         </button>
                         <div class="dropdown">
                             <button id="dropdownMenu" class="btn btn-secondary dropdown-toggle" type="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-sort"></i>
-                                Sort
+                                Sort by
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                                <li><button class="dropdown-item" type="button">Action</button></li>
-                                <li><button class="dropdown-item" type="button">Another action</button></li>
-                                <li><button class="dropdown-item" type="button">Something else here</button></li>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu">
+                                <li><button class="dropdown-item" type="button">
+                                        <i id="important" class="far fa-star"></i>
+                                        Important</button></li>
+                                <li><button class="dropdown-item" type="button">
+                                        <i class="icon fas fa-calendar-alt"></i>
+                                        Date</button></li>
+                                <li><button class="dropdown-item" type="button">
+                                        <i class="fas fa-sort-alpha-down"></i>
+                                        Aphabetically</button></li>
                             </ul>
                         </div>
                     </div>
@@ -120,8 +126,16 @@
                                     </td>
                                     <td>Celebrate a party</td>
                                     <td>12:00 24/5/2022</td>
-                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td width="100"><button class="btn btn-success btn-sm edit-btn">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            <p>Edit</p>
+                                        </button>
+                                    </td>
+                                    <td width="110"><button class="btn btn-danger btn-sm delete-btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                            <p>Delete</p>
+                                        </button>
+                                    </td>
                                     <td><i id="important" class="far fa-star"></i></td>
                                 </tr>
                                 <tr>
@@ -132,8 +146,16 @@
                                     </td>
                                     <td>Celebrate a party</td>
                                     <td>12:00 24/5/2022</td>
-                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td width="100"><button class="btn btn-success btn-sm edit-btn">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            <p>Edit</p>
+                                        </button>
+                                    </td>
+                                    <td width="110"><button class="btn btn-danger btn-sm delete-btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                            <p>Delete</p>
+                                        </button>
+                                    </td>
                                     <td><i id="important" class="far fa-star"></i></td>
                                 </tr>
                                 <tr>
@@ -144,8 +166,16 @@
                                     </td>
                                     <td>Celebrate a party</td>
                                     <td>12:00 24/5/2022</td>
-                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td width="100"><button class="btn btn-success btn-sm edit-btn">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            <p>Edit</p>
+                                        </button>
+                                    </td>
+                                    <td width="110"><button class="btn btn-danger btn-sm delete-btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                            <p>Delete</p>
+                                        </button>
+                                    </td>
                                     <td><i id="important" class="far fa-star"></i></td>
                                 </tr>
                                 <tr>
@@ -156,8 +186,16 @@
                                     </td>
                                     <td>Celebrate a party</td>
                                     <td>12:00 24/5/2022</td>
-                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td width="100"><button class="btn btn-success btn-sm edit-btn">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            <p>Edit</p>
+                                        </button>
+                                    </td>
+                                    <td width="110"><button class="btn btn-danger btn-sm delete-btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                            <p>Delete</p>
+                                        </button>
+                                    </td>
                                     <td><i id="important" class="far fa-star"></i></td>
                                 </tr>
                                 <tr>
@@ -168,8 +206,16 @@
                                     </td>
                                     <td>Celebrate a party</td>
                                     <td>12:00 24/5/2022</td>
-                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td width="100"><button class="btn btn-success btn-sm edit-btn">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            <p>Edit</p>
+                                        </button>
+                                    </td>
+                                    <td width="110"><button class="btn btn-danger btn-sm delete-btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                            <p>Delete</p>
+                                        </button>
+                                    </td>
                                     <td><i id="important" class="far fa-star"></i></td>
                                 </tr>
                                 <tr>
@@ -180,8 +226,16 @@
                                     </td>
                                     <td>Celebrate a party</td>
                                     <td>12:00 24/5/2022</td>
-                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td width="100"><button class="btn btn-success btn-sm edit-btn">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            <p>Edit</p>
+                                        </button>
+                                    </td>
+                                    <td width="110"><button class="btn btn-danger btn-sm delete-btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                            <p>Delete</p>
+                                        </button>
+                                    </td>
                                     <td><i id="important" class="far fa-star"></i></td>
                                 </tr>
                                 <tr>
@@ -192,8 +246,16 @@
                                     </td>
                                     <td>Celebrate a party</td>
                                     <td>12:00 24/5/2022</td>
-                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td width="100"><button class="btn btn-success btn-sm edit-btn">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            <p>Edit</p>
+                                        </button>
+                                    </td>
+                                    <td width="110"><button class="btn btn-danger btn-sm delete-btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                            <p>Delete</p>
+                                        </button>
+                                    </td>
                                     <td><i id="important" class="far fa-star"></i></td>
                                 </tr>
                                 <tr>
@@ -204,8 +266,16 @@
                                     </td>
                                     <td>Celebrate a party</td>
                                     <td>12:00 24/5/2022</td>
-                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td width="100"><button class="btn btn-success btn-sm edit-btn">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            <p>Edit</p>
+                                        </button>
+                                    </td>
+                                    <td width="110"><button class="btn btn-danger btn-sm delete-btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                            <p>Delete</p>
+                                        </button>
+                                    </td>
                                     <td><i id="important" class="far fa-star"></i></td>
                                 </tr>
                                 <tr>
@@ -216,8 +286,16 @@
                                     </td>
                                     <td>Celebrate a party</td>
                                     <td>12:00 24/5/2022</td>
-                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td width="100"><button class="btn btn-success btn-sm edit-btn">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            <p>Edit</p>
+                                        </button>
+                                    </td>
+                                    <td width="110"><button class="btn btn-danger btn-sm delete-btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                            <p>Delete</p>
+                                        </button>
+                                    </td>
                                     <td><i id="important" class="far fa-star"></i></td>
                                 </tr>
                                 <tr>
@@ -228,8 +306,16 @@
                                     </td>
                                     <td>Celebrate a party</td>
                                     <td>12:00 24/5/2022</td>
-                                    <td><button class="btn btn-success btn-sm">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                    <td width="100"><button class="btn btn-success btn-sm edit-btn">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            <p>Edit</p>
+                                        </button>
+                                    </td>
+                                    <td width="110"><button class="btn btn-danger btn-sm delete-btn">
+                                            <i class="fas fa-trash-alt"></i>
+                                            <p>Delete</p>
+                                        </button>
+                                    </td>
                                     <td><i id="important" class="far fa-star"></i></td>
                                 </tr>
                             </tbody>
@@ -239,9 +325,27 @@
             </div>
         </div>
     </div>
+    <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-bs-backdrop="true" data-bs-keyboard="true">
+        <div class="modal-dialog   modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <script src="asset/script.js"></script>
 </body>
 

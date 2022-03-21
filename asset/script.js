@@ -9,4 +9,7 @@ $(function () {
         $('#time').text(time)
     }
     setInterval(dateTimeHandle, 1000)
+    setTimeout(function(){
+        $('body').removeClass('preload')
+    }, 500)
 })

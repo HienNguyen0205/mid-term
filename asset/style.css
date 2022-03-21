@@ -3,9 +3,11 @@
 }
 
 body {
-    background-image: url(./img/background-img.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(147deg, #88ff93 0%, #98fff3 21%, #8d9dff 51%, #6dbfff 63%, #f2a5ff 100%);
+}
+
+body.preload *{
+    animation-duration: 0s !important;
 }
 
 #main-container {
@@ -49,6 +51,8 @@ body {
     max-height: 567px;
 }
 
+/* side-menu */
+
 #side-menu {
     padding: 1rem 1rem 1rem 0;
 }
@@ -66,17 +70,77 @@ body {
     margin-left: 8px;
 }
 
-#add-btn p{
-    display: none;
+.sidebar-menu{
+    animation: in .5s ease both;
 }
 
-#add-btn:hover p{
-    display: inline-block;
+.sidebar-menu:hover {
+    animation: out .5s ease both;
 }
 
-#add-btn:hover{
+/* add-btn animate */
 
+#add-btn {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    text-overflow: clip;
+    white-space: nowrap;
+    transition: all 0.5s ease;
 }
+
+#add-btn i{
+    transition: all 0.5s ease;
+}
+
+#add-btn:hover i {
+    transition: all 0.5s ease;
+    transform: rotate(90deg);
+}
+
+#add-btn:hover p,
+.delete-btn:hover p,
+.edit-btn:hover p {
+    transition: all 0.25s ease;
+    color: #fff;
+}
+
+#add-btn p,
+.delete-btn p,
+.edit-btn p {
+    margin-left: 14px;
+    color: transparent;
+    margin-bottom: 0;
+}
+
+#add-btn:hover {
+    transition: all 0.5s ease;
+    width: 150px;
+}
+
+/* delete and edit button animate */
+
+.delete-btn,
+.edit-btn {
+    display: flex;
+    width: 31px;
+    align-items: center;
+    text-overflow: clip;
+    white-space: nowrap;
+    transition: all 0.5s ease;
+}
+
+.delete-btn:hover {
+    transition: all 0.5s ease;
+    width: 90px;
+}
+
+.edit-btn:hover {
+    transition: all 0.5s ease;
+    width: 70px;
+}
+
+/* table scrollbar */
 
 #table-container {
     position: relative;
@@ -104,11 +168,27 @@ body {
 
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(34,193,195);
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
     border-radius: 10px;
 }
 
 /* animation */
 
-keyframes 
+@keyframes out {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(12px);
+    }
+}
+
+@keyframes in {
+    from{
+        transform: translateX(12px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
